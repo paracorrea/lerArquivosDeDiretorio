@@ -15,7 +15,7 @@ public class LerTodosArquivosDaPasta {
 		
 		List<String> result;
 		
-		 try (Stream<Path> walk = Files.walk(Paths.get("C:\\Users\\fernando.correa\\Documents\\GitHub\\novos\\lerArquivosDeFolder\\folder"))) {
+		 try (Stream<Path> walk = Files.walk(Paths.get("/home/fernando/Documentos/novo/folderFiles/nfe"))) {
 		      result = walk
 		              .filter(p -> !Files.isDirectory(p))   // not a directory
 		              .map(p -> p.getFileName().toString().toLowerCase()) // convert path to string
@@ -25,7 +25,11 @@ public class LerTodosArquivosDaPasta {
 	
 		 
 		for (String string : result) {
-			System.out.println(string);
+			
+			String head = string.substring(0, 5);
+			
+			//System.out.println(string);
+			System.out.println(head);
 		} 
 		
 		}
